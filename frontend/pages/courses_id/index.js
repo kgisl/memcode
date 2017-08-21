@@ -16,13 +16,19 @@ class Page_courses_id extends React.Component {
   }
 
   state = {
-    speGetPage: {}
+    speGetPage: {},
+    speDeleteProblem: {}
   }
 
   componentDidMount = () =>
     commonFetch(
       spe => this.setState({ speGetPage: spe }),
       'GET', `/api/pages/courses/${this.props.params.id}`
+    )
+
+  deleteProblem = (event) =>
+    commonFetch((spe) => this.setState({ speDeleteProblem: spe }),
+      'DELETE', `/api/problems/${event.target.id}`
     )
 
   render = () =>
@@ -35,11 +41,14 @@ class Page_courses_id extends React.Component {
         <Loading spe={this.state.speGetPage}>{(problems) =>
           <section className="problems">
             {problems.map((problem) =>
-              <Problem
-                mode="show"
-                problemContent={problem.content}
-                problemType={problem.type}
-              />
+              <div>
+                <Problem
+                  mode="show"
+                  problemContent={problem.content}
+                  problemType={problem.type}
+                />
+                <button id={problem.id} onClick={this.deleteProblem}>Remove</button>
+              </div>
             )}
           </section>
         }</Loading>

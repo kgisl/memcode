@@ -23,7 +23,7 @@ db = memcode
 db-setup:
 	createdb $(db)
 db-drop:
-	psql -U $(user) -c 'DROP DATABASE IF EXISTS $(db)'
+	psql -U $(user) -d $(db) -c 'DROP DATABASE IF EXISTS $(db)'
 db-reset:
 	# 'database=' here is a variable used in schema.sql (-v).
 	psql -v database=$(db) -d $(db) -U $(user) -f backend/db/schema.sql
