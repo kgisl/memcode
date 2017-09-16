@@ -13,7 +13,8 @@ import css from './index.css';
 class Page_courses extends React.Component {
   state = {
     speGetCourses: {},
-    searchString: ''
+    searchString: '',
+    searchRe: new RegExp()
   }
 
   componentDidMount = () =>
@@ -25,6 +26,7 @@ class Page_courses extends React.Component {
   updateSearchString = (event) => {
     const newSearchString = event.target.value;
     this.setState({ searchString: newSearchString });
+    this.setState({ searchRe: new RegExp(this.state.searchString) });
   }
 
   filter = (coursesData) => {
@@ -45,6 +47,8 @@ class Page_courses extends React.Component {
     }));
   }
 
+  dogFilter = (courses) => courses.filter((item) => this.state.searchRe.test(item.course.title));
+
   render = () =>
     <main className={css.main}>
       <Header/>
@@ -61,7 +65,10 @@ class Page_courses extends React.Component {
         </section>
 
         <Loading spe={this.state.speGetCourses}>{coursesData =>
-          <ListOfSimpleCourses coursesData={this.filter(coursesData)}/>
+          <div>
+            <ListOfSimpleCourses coursesData={this.filter(coursesData)}/>
+            <ListOfSimpleCourses coursesData={this.dogFilter(coursesData)}/>
+          </div>
         }</Loading>
       </div>
       <Footer/>
