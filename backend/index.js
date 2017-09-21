@@ -41,8 +41,8 @@ app.use('/api/auth', authRouter);
 import { router as pagesRouter } from './components/pages/routes';
 app.use('/api/pages', pagesRouter);
 
-import { router as adminRouter } from './components/admin/routes';
-app.use('/api/admin', adminRouter);
+import { router as usersRouter } from './components/users/routes';
+app.use('/api/users', usersRouter);
 
 import { html } from './html';
 app.get('*', (request, response) => response.send(html));

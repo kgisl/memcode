@@ -34,7 +34,7 @@ import { Page_courses_id_learn } from './pages/courses_id_learn';
 import { Page_courses_id_edit } from './pages/courses_id_edit';
 import { Page_profile_learning } from './pages/profile_learning';
 import { Page_profile_created } from './pages/profile_created';
-
+import { Page_admin } from './pages/admin';
 // static pages
 import { Page_test } from './pages/test';
 import { Page_pleaseSignIn } from './pages/pleaseSignIn';
@@ -78,6 +78,7 @@ ReactDOM.render(
       <Route path="profile/created" component={Page_profile_created} {...auth}/>
       <Route path="/please-sign-in" component={Page_pleaseSignIn}/>
       <Route path="/test" component={Page_test}/>
+      <Route path="/admin" component={Page_admin}/>
       <Route path="/contact" component={Page_contact}/>
       <Route path="/contact-dog" component={Contact_dog}/>
       <Route path="/" component={Page_articles_welcome} {...rootRedirect}/>
