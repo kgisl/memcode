@@ -1,0 +1,9 @@
+\c :database;
+
+CREATE TABLE animal (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR NOT NULL,
+  age VARCHAR NOT NULL,
+  color VARCHAR NOT NULL,
+  unique (name, age, color)
+);

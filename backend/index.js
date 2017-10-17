@@ -44,6 +44,10 @@ app.use('/api/pages', pagesRouter);
 import { router as usersRouter } from './components/users/routes';
 app.use('/api/users', usersRouter);
 
+import { router as animalsRouter } from './components/animals/routes';
+app.use('/api/animals', animalsRouter);
+
+
 import { html } from './html';
 app.get('*', (request, response) => response.send(html));
 

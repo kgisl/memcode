@@ -9,7 +9,7 @@ class Page_admin extends React.Component {
 
   componentDidMount = () =>
     dogFetch(
-      (res) => this.setState({ users: res.response }),
+      (res) => Array.isArray(res.response) ? this.setState({ users: res.response }) : undefined,
       'GET', '/api/users/'
     )
 

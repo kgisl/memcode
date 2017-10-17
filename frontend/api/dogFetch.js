@@ -29,4 +29,6 @@ const dogFetch = (dispatch, method, url, body = undefined) => {
       });
 };
 
+window.dogFetch = dogFetch;
+
 export { dogFetch };
