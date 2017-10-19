@@ -30,10 +30,13 @@ const select = {
       `
         SELECT
           row_to_json(course.*) AS course,
-          COUNT(problem.id)     AS amount_of_problems
+          COUNT(problem.id)     AS amount_of_problems,
+          COUNT(DISTINCT course_user_is_learning.user_id) AS amount_of_users_learning_this_course
         FROM course
         LEFT OUTER JOIN problem
           ON problem.course_id = course.id
+        INNER JOIN course_user_is_learning
+          ON course_user_is_learning.course_id = course.id
         WHERE
           if_public = true
             AND
