@@ -47,10 +47,10 @@ const retrieveAccount = makeAccountRetriever('Github');
 
 // 1. after user goes to github.com/login/oauth/authorize?client_id=OUR_ID, she is redirected here
 router.get('/github/callback', catchAsync(async (request, response) => {
-  const account = retrieveAccount(request);
-  const user = await User.select.oneByOauth('github', account.id) || await User.insert.createFromGithub(account);
-  if (!user.email) await User.update.update(user.id, account.email);
-  const token = jwt.sign(user, process.env['JWT_SECRET']);
+  const account = await retrieveAccount(request);
+  const local_user = await User.select.oneByOauth('github', account.id) || await User.insert.createFromGithub(account);
+  //local_user.email || await User.update.update(local_user.id, account.email);
+  const token = jwt.sign(local_user, process.env['JWT_SECRET']);
   response.redirect('/?token=' + token);
 }));
 
