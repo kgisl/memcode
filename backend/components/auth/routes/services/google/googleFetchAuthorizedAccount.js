@@ -14,6 +14,6 @@ const googleFetchAuthorizedAccount = (accessToken) =>
       return response.json()
         .then((res) => Promise.reject(res));
     }
-  }).catch((err) => console.log(err));
+  });
 
 export { googleFetchAuthorizedAccount };

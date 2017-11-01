@@ -3,7 +3,7 @@ import { db } from '~/db/init.js';
 const select = {
   // getUserByOauth('github', 7578559)
   // => user
-  oneByOauth: (oauthProvider, oauthId) =>
+  oneByOauth: async (oauthProvider, oauthId) =>
     db.oneOrNone(
       'SELECT * FROM "user" WHERE oauth_provider=${oauthProvider} and oauth_id=${oauthId}',
       {
@@ -21,28 +21,26 @@ const select = {
 
 const insert = {
   createFrom: (oauthProvider, oauthProfile) => {
-    switch (oauthProvider) {
-      case 'github':
-        insert.create({
-          oauthProvider: 'github',
-          oauthId: oauthProfile.id.toString(),
-          username: oauthProfile.login,
-          avatarUrl: oauthProfile.avatar_url,
-          email: oauthProfile.email
-        });
-        break;
-      case 'google':
-        insert.create({
-          oauthProvider: 'google',
-          oauthId: oauthProfile.id.toString(),
-          username: oauthProfile.name,
-          avatarUrl: oauthProfile.picture,
-          email: oauthProfile.email
-        });
-    }
+    const profile = {
+      github: {
+        oauthProvider: 'github',
+        oauthId: oauthProfile.id.toString(),
+        username: oauthProfile.login,
+        avatarUrl: oauthProfile.avatar_url,
+        email: oauthProfile.email
+      },
+      google: {
+        oauthProvider: 'google',
+        oauthId: oauthProfile.id.toString(),
+        username: oauthProfile.name,
+        avatarUrl: oauthProfile.picture,
+        email: oauthProfile.email
+      }
+    };
+    return insert.create(profile[oauthProvider]);
   },
 
-  create: (user) =>
+  create: async (user) =>
     db.one(
       'INSERT INTO "user" (oauth_provider, oauth_id, username, avatar_url, email) VALUES (${oauthProvider}, ${oauthId}, ${username}, ${avatarUrl}, ${email}) RETURNING *',
       {
