@@ -18,9 +18,9 @@ If you file an issue with a question, it will be closed. I'm not trying to be me
 
 ## Reporting Bugs / Requesting Features
 
-- If you have never done this, first [Watch video](https://www.youtube.com/watch?v=Kw9fVgc3Tzk&index=6&list=PLV5CVI1eNcJi7lVVIuNyRhEuck1Z007BH)
-- Write me at  [contact@memcode.com](mailto:contact@memcode.com)
-- If you've found an issue, please submit it in [the issues](https://github.com/memcode/issues), preferably with some screenshots (for e.g. https://github.com/lakesare/memcode/issues/24#issue-586340634). 
+- If you have never done this before, first watch  [this video](https://www.youtube.com/watch?v=Kw9fVgc3Tzk&index=6&list=PLV5CVI1eNcJi7lVVIuNyRhEuck1Z007BH) 
+- Write me at  [contact@memcode.com](mailto:contact@memcode.com) or 
+-  Submit the problem as an issue in [the issues](https://github.com/memcode/issues), preferably with some screenshots (for e.g. https://github.com/lakesare/memcode/issues/24#issue-586340634). 
 
 ## Pull Requests
 
@@ -83,3 +83,4 @@ There are a lot of questions from people as they get started using **memcode**. 
 
 - Tests are always helpful! [Watch video](https://youtu.be/CQ766-miGQ4?list=PLV5CVI1eNcJi7lVVIuNyRhEuck1Z007BH)
 - Any of the issues in GitHub, let us know if you have some time to fix one. Especially those labeled [up-for-grabs](https://github.com/lakesare/memcode/labels/up-for-grabs)
+
