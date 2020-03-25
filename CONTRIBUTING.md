@@ -8,19 +8,20 @@ Here's [a playlist](https://www.youtube.com/playlist?list=PLV5CVI1eNcJi7lVVIuNyR
 
 ## Questions/Help
 
-[Watch video](https://www.youtube.com/watch?v=NXqFiSeBE-M&list=PLV5CVI1eNcJi7lVVIuNyRhEuck1Z007BH&index=2)
+- _TBR, something similar to [Watch video ](https://www.youtube.com/watch?v=NXqFiSeBE-M&list=PLV5CVI1eNcJi7lVVIuNyRhEuck1Z007BH&index=2)_
 
-An example will get you help faster than anything else you do. Create a course by going to [Create Course](https://www.memcode.com/courses/new).
+- An example will get you help faster than anything else you do. Create a course by going to [Create Course](https://www.memcode.com/courses/new).
+- Join us on [gitter](https://gitter.im/formly-js/angular-formly) to ask questions in real time
 
-Join us on [gitter](https://gitter.im/formly-js/angular-formly).
-
-If you file an issue with a question, it will be closed. I'm not trying to be mean. I'm just trying to stay sane. :-)
+By the way, if you file an issue with a question, it will be closed. I'm not trying to be mean. I'm just trying to stay sane. :-)
 
 ## Reporting Bugs / Requesting Features
 
-- If you have never done this before, first watch  [this video](https://www.youtube.com/watch?v=Kw9fVgc3Tzk&index=6&list=PLV5CVI1eNcJi7lVVIuNyRhEuck1Z007BH) 
+[Watch video](https://www.youtube.com/watch?v=Kw9fVgc3Tzk&index=6&list=PLV5CVI1eNcJi7lVVIuNyRhEuck1Z007BH) 
 - Write me at  [contact@memcode.com](mailto:contact@memcode.com) or 
--  Submit the problem as an issue in [the issues](https://github.com/memcode/issues), preferably with some screenshots (for e.g. https://github.com/lakesare/memcode/issues/24#issue-586340634). 
+-  Submit the problem as an issue in [the issues](https://github.com/memcode/issues), preferably with some screenshots (for e.g. https://github.com/lakesare/memcode/issues/24#issue-586340634) or 
+- even better, write a failing test! 
+
 
 ## Pull Requests
 
